@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from googleapiclient.discovery import build
 import random
 
