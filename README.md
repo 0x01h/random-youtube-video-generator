@@ -9,7 +9,7 @@ You can change its parameter to whatever you want. <br />
 `DEVELOPER_KEY = 'YOUR_DEVELOPER_KEY'` <br />
 Sign up and change with your own developer key: https://console.developers.google.com <br /><br />
 **Google APIs Client Library** <br />
-`pip3 install google-api-python-client`
+`pip3 install --upgrade google-api-python-client`
 
 ## Example Project Website
 [randomyoutubevideo.com](https://www.randomyoutubevideo.com)
