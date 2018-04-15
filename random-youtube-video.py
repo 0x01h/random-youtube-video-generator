@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 from googleapiclient.discovery import build
 import random
@@ -25,3 +25,5 @@ def youtube_search():
     if search_result['id']['kind'] == 'youtube#video':
       videos.append('%s' % (search_result['id']['videoId']))
   return (videos[random.randint(0, 2)])
+
+print(youtube_search())
