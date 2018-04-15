@@ -7,7 +7,7 @@ You can change its parameter to whatever you want. <br />
 ## Prerequisites
 **Google Developer Key for YouTube** <br />
 `DEVELOPER_KEY = 'YOUR_DEVELOPER_KEY'` <br />
-*Sign Up:* https://console.developers.google.com <br /><br />
+Sign up and change with your own developer key: https://console.developers.google.com <br /><br />
 **Google APIs Client Library** <br />
 `pip3 install google-api-python-client`
 
