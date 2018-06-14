@@ -18,4 +18,4 @@ Now you can use this video ID as "https://www.youtube.com/watch?v=0CGyCMzi1l8" <
 Change the ID parameter with your output: "https://www.youtube.com/watch?v=ID" <br />
 
 ## Example Project Website
-Check out my website: [randomyoutubevideo.com](https://www.randomyoutubevideo.com)
+Check out this website: [randomyoutubevideo.com](https://www.randomyoutubevideo.com)
