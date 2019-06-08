@@ -15,7 +15,4 @@ Sign up and change with your own developer key: https://console.developers.googl
 `> random-youtube-video.py` <br />
 `> 0CGyCMzi1l8` <br /><br />
 Now you can use this video ID as "https://www.youtube.com/watch?v=0CGyCMzi1l8" <br />
-Change the ID parameter with your output: "https://www.youtube.com/watch?v=ID" <br />
-
-## Example Project Website
-Check out this website: [randomyoutubevideo.com](https://www.randomyoutubevideo.com)
+Change the ID parameter with your output: "https://www.youtube.com/watch?v=ID" <br /> 
