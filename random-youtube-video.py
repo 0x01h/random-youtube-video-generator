@@ -1,29 +1,39 @@
-#!/usr/bin/env python3
+import random, os, json, string
+from dotenv import load_dotenv
+from googleapiclient.discovery import build_from_document
 
-from googleapiclient.discovery import build
-import random
+load_dotenv()
 
-DEVELOPER_KEY = 'YOUR_DEVELOPER_KEY'
-YOUTUBE_API_SERVICE_NAME = 'youtube'
-YOUTUBE_API_VERSION = 'v3'
-
-prefix = ['IMG ', 'IMG_', 'IMG-', 'DSC ']
-postfix = [' MOV', '.MOV', ' .MOV']
-
+DEVELOPER_KEY = os.environ["DEVELOPER_KEY"]
+  
 def youtube_search():
-  youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=DEVELOPER_KEY)
+  with open("service.json", encoding="utf-8") as f:
+    service = json.load(f)
+    
+  youtube = build_from_document(service, developerKey=DEVELOPER_KEY)
+
+  z = ""
+  for x in range(0, random.randint(1, 7)):
+    y = random.choice([char for char in string.printable])
+    z = z + y
 
   search_response = youtube.search().list(
-    q=random.choice(prefix) + str(random.randint(999, 9999)) + random.choice(postfix),
-    part='snippet',
+    q=str(z),
+    part="snippet",
     maxResults=5
   ).execute()
 
-  videos = []
+  videosId = []
+  videosTitle=[]
 
-  for search_result in search_response.get('items', []):
-    if search_result['id']['kind'] == 'youtube#video':
-      videos.append('%s' % (search_result['id']['videoId']))
-  return (videos[random.randint(0, 2)])
+  for search_result in search_response.get("items", []):
+    if search_result["id"]["kind"] == "youtube#video":
+      videosId.append("%s" % (search_result["id"]["videoId"]))
+      videosTitle.append(search_result["snippet"]["title"])
 
-print(youtube_search())
+  index = random.randint(0, 2)
+  return [videosId[index], videosTitle[index]]
+
+video = youtube_search()
+
+print(f"{video[1]} - https://www.youtube.com/watch?v={video[0]}")
